@@ -63,7 +63,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.get('/health', (req, res) => {
   res.status(200).json({
     status: 'OK',
-    message: 'Morchis Nómina API is running',
+    message: 'Sistema Nómina API is running',
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
     database: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected',

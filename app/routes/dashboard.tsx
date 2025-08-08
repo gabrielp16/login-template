@@ -4,6 +4,7 @@ import { dashboardApi } from "../services/api";
 import { useState, useEffect, useRef } from "react";
 import type { DashboardStats, RecentActivity } from "../types/auth";
 import { useNavigate, Link } from "react-router";
+import logoSistema from "../components/welcome/logo-sistema.svg";
 
 export function meta() {
   return [
@@ -122,6 +123,18 @@ export default function Dashboard() {
         <div className="px-4 py-6 sm:px-0">
           {/* Header */}
           <div className="mb-8">
+            {/* Logo y Título del Sistema */}
+            <div className="flex items-center mb-4">
+              <img
+                src={logoSistema}
+                alt="Sistema Nómina"
+                className="h-12 w-auto mr-4"
+              />
+              <h2 className="text-2xl font-bold text-gray-900">
+                Sistema Nómina
+              </h2>
+            </div>
+            
             <h1 className="text-3xl font-bold text-gray-900">
               ¡Bienvenido, {user?.name}!
             </h1>
@@ -433,82 +446,6 @@ export default function Dashboard() {
               </div>
             </div>
           )}
-
-          {/* Quick Actions */}
-          <div className="bg-white shadow rounded-lg">
-            <div className="px-4 py-5 sm:p-6">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Acciones Rápidas
-              </h3>
-              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {hasPermission('CREATE_USERS') && (
-                  <Link
-                    to="/users"
-                    className="relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-500 rounded-lg border border-gray-300 hover:border-gray-400"
-                  >
-                    <div>
-                      <span className="rounded-lg inline-flex p-3 bg-blue-50 text-blue-700 ring-4 ring-white">
-                        <Users className="h-6 w-6" />
-                      </span>
-                    </div>
-                    <div className="mt-8">
-                      <h3 className="text-lg font-medium">
-                        <span className="absolute inset-0" aria-hidden="true" />
-                        Crear Usuario
-                      </h3>
-                      <p className="mt-2 text-sm text-gray-500">
-                        Agregar un nuevo usuario al sistema con roles específicos
-                      </p>
-                    </div>
-                  </Link>
-                )}
-
-                {hasPermission('CREATE_ROLES') && (
-                  <Link
-                    to="/roles"
-                    className="relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-green-500 rounded-lg border border-gray-300 hover:border-gray-400"
-                  >
-                    <div>
-                      <span className="rounded-lg inline-flex p-3 bg-green-50 text-green-700 ring-4 ring-white">
-                        <Shield className="h-6 w-6" />
-                      </span>
-                    </div>
-                    <div className="mt-8">
-                      <h3 className="text-lg font-medium">
-                        <span className="absolute inset-0" aria-hidden="true" />
-                        Configurar Roles
-                      </h3>
-                      <p className="mt-2 text-sm text-gray-500">
-                        Crear y administrar roles con permisos específicos
-                      </p>
-                    </div>
-                  </Link>
-                )}
-
-                {hasPermission('CREATE_PERMISSIONS') && (
-                  <Link
-                    to="/permissions"
-                    className="relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-500 rounded-lg border border-gray-300 hover:border-gray-400"
-                  >
-                    <div>
-                      <span className="rounded-lg inline-flex p-3 bg-purple-50 text-purple-700 ring-4 ring-white">
-                        <Key className="h-6 w-6" />
-                      </span>
-                    </div>
-                    <div className="mt-8">
-                      <h3 className="text-lg font-medium">
-                        <span className="absolute inset-0" aria-hidden="true" />
-                        Gestionar Permisos
-                      </h3>
-                      <p className="mt-2 text-sm text-gray-500">
-                        Definir y organizar permisos del sistema
-                      </p>
-                    </div>
-                  </Link>
-                )}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

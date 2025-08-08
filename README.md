@@ -1,4 +1,4 @@
-# 🚀 Morchis Nómina - Template Base SPA
+# 🚀 Sismtema Nómina - Template Base SPA
 
 Un **template profesional** de aplicación web con autenticación, autorización y gestión de usuarios construido con **React Router v7**, **TypeScript** y **Tailwind CSS**. 
 

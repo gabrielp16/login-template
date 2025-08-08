@@ -3,8 +3,8 @@ import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router";
 import { authService } from "../../services/api";
 import { Eye, EyeOff, User, Lock, AlertCircle } from "lucide-react";
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+
+import logoSistema from "./logo-sistema.svg";
 
 export function Welcome() {
   const [email, setEmail] = useState("");
@@ -56,24 +56,13 @@ export function Welcome() {
       <div className="max-w-md w-full space-y-8">
         {/* Header */}
         <div className="text-center">
-          <div className="w-32 h-32 mx-auto mb-6">
+          <div className="w-70 h-45 mx-auto mb-6">
             <img
-              src={logoLight}
-              alt="Morchis Nómina"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src={logoDark}
-              alt="Morchis Nómina"
-              className="hidden w-full dark:block"
+              src={logoSistema}
+              alt="Sistema Nómina"
+              className="block w-full"
             />
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            Morchis Nómina
-          </h2>
-          <p className="text-sm text-gray-600">
-            Sistema de gestión de nómina y usuarios
-          </p>
         </div>
 
         {/* Login Form */}
@@ -83,7 +72,7 @@ export function Welcome() {
               Iniciar Sesión
             </h3>
             <p className="text-sm text-gray-600 text-center mt-2">
-              Ingresa tus credenciales para acceder al sistema
+              Ingresa tus credenciales para acceder al Sistema de gestión de nómina y usuarios
             </p>
           </div>
 
@@ -170,21 +159,6 @@ export function Welcome() {
               </button>
             </div>
           </form>
-
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <h4 className="text-sm font-medium text-gray-700 mb-2">
-              Credenciales de prueba:
-            </h4>
-            <div className="text-xs text-gray-600 space-y-1">
-              <div>
-                <strong>Admin:</strong> admin@morchis.com / admin123
-              </div>
-              <div>
-                <strong>Usuario:</strong> usuario@morchis.com / usuario123
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

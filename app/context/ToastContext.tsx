@@ -70,11 +70,11 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
   }, [addToast]);
 
   const error = useCallback((title: string, message?: string, options?: { duration?: number; persistent?: boolean }) => {
-    addToast({ type: 'error', title, message, persistent: true, ...options });
+    addToast({ type: 'error', title, message, duration: 6000, ...options });
   }, [addToast]);
 
   const warning = useCallback((title: string, message?: string, options?: { duration?: number; persistent?: boolean }) => {
-    addToast({ type: 'warning', title, message, ...options });
+    addToast({ type: 'warning', title, message, duration: 7000, ...options });
   }, [addToast]);
 
   const info = useCallback((title: string, message?: string, options?: { duration?: number; persistent?: boolean }) => {

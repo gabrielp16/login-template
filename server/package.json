@@ -1,7 +1,7 @@
 {
-  "name": "morchis-nomina-backend",
+  "name": "sistema-nomina-backend",
   "version": "1.0.0",
-  "description": "Backend API para el sistema de nómina Morchis con autenticación completa",
+  "description": "Backend API para el sistema de nómina con autenticación completa",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
@@ -60,7 +60,7 @@
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
   },
-  "author": "Morchis Team",
+  "author": "Gabo Peña",
   "license": "MIT",
   "keywords": [
     "nodejs",

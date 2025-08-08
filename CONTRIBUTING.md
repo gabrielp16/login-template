@@ -1,4 +1,4 @@
-# Contribuir a Morchis Nómina Template
+# Contribuir a Sistema Nómina Template
 
 ¡Gracias por tu interés en contribuir! Este documento te guiará a través del proceso de contribución.
 

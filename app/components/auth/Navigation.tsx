@@ -4,6 +4,7 @@ import { Button } from '../ui/button';
 import { LoginSidebar } from './LoginSidebar';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
+import logoSistema from "../../components/welcome/logo-sistema.svg";
 import { Link } from 'react-router';
 
 export function Navigation() {
@@ -30,7 +31,17 @@ export function Navigation() {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <Link to="/dashboard" className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                  Morchis Nómina
+                  {/* Logo y Título de Sistema Nómina */}
+                  <div className="flex items-center mb-4 mt-4">
+                    <img
+                      src={logoSistema}
+                      alt="Sistema Nómina"
+                      className="h-12 w-auto mr-4"
+                    />
+                    <h2 className="text-2xl font-bold text-gray-900">
+                      Nómina
+                    </h2>
+                  </div>
                 </Link>
               </div>
             </div>
