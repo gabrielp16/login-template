@@ -4,7 +4,6 @@ import { dashboardApi } from "../services/api";
 import { useState, useEffect, useRef } from "react";
 import type { DashboardStats, RecentActivity } from "../types/auth";
 import { useNavigate, Link } from "react-router";
-import logoSistema from "../components/welcome/logo-sistema.svg";
 
 export function meta() {
   return [
@@ -122,19 +121,7 @@ export default function Dashboard() {
       <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">
           {/* Header */}
-          <div className="mb-8">
-            {/* Logo y Título del Sistema */}
-            <div className="flex items-center mb-4">
-              <img
-                src={logoSistema}
-                alt="Sistema Nómina"
-                className="h-12 w-auto mr-4"
-              />
-              <h2 className="text-2xl font-bold text-gray-900">
-                Sistema Nómina
-              </h2>
-            </div>
-            
+          <div className="mb-8">            
             <h1 className="text-3xl font-bold text-gray-900">
               ¡Bienvenido, {user?.name}!
             </h1>
