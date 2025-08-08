@@ -1,6 +1,5 @@
 import { useAuth } from "../context/AuthContext";
 import { Users, Shield, Key, BarChart3 } from "lucide-react";
-import { AuthStatusPanel } from "../components/debug/AuthStatusPanel";
 import { dashboardApi } from "../services/api";
 import { useState, useEffect, useRef } from "react";
 import type { DashboardStats, RecentActivity } from "../types/auth";
@@ -510,13 +509,6 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-
-          {/* Panel de estado de autenticación (solo en desarrollo) */}
-          {import.meta.env.DEV && (
-            <div className="mt-8">
-              <AuthStatusPanel />
-            </div>
-          )}
         </div>
       </div>
     </div>
