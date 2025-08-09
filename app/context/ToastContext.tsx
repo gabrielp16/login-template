@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import { CheckCircle, XCircle, AlertTriangle, Info, X } from 'lucide-react';
 
@@ -66,7 +66,7 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
   }, []);
 
   const success = useCallback((title: string, message?: string, options?: { duration?: number; persistent?: boolean }) => {
-    addToast({ type: 'success', title, message, ...options });
+    addToast({ type: 'success', title, message, duration: 6000, ...options });
   }, [addToast]);
 
   const error = useCallback((title: string, message?: string, options?: { duration?: number; persistent?: boolean }) => {
@@ -74,11 +74,11 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
   }, [addToast]);
 
   const warning = useCallback((title: string, message?: string, options?: { duration?: number; persistent?: boolean }) => {
-    addToast({ type: 'warning', title, message, duration: 7000, ...options });
+    addToast({ type: 'warning', title, message, duration: 6000, ...options });
   }, [addToast]);
 
   const info = useCallback((title: string, message?: string, options?: { duration?: number; persistent?: boolean }) => {
-    addToast({ type: 'info', title, message, ...options });
+    addToast({ type: 'info', title, message, duration: 6000, ...options });
   }, [addToast]);
 
   const clearAll = useCallback(() => {
@@ -181,16 +181,14 @@ export const ToastContainer = () => {
   const { toasts, removeToast } = useToast();
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end">
-      <div className="flex flex-col space-y-4 w-full max-w-sm">
-        {toasts.map((toast) => (
-          <ToastItem
-            key={toast.id}
-            toast={toast}
-            onRemove={removeToast}
-          />
-        ))}
-      </div>
+    <div className="fixed inset-x-0 bottom-0 z-50 flex flex-col items-center px-4 py-6 pointer-events-none space-y-4">
+      {toasts.map((toast) => (
+        <ToastItem
+          key={toast.id}
+          toast={toast}
+          onRemove={removeToast}
+        />
+      ))}
     </div>
   );
 };
@@ -199,22 +197,22 @@ export const ToastContainer = () => {
 export const toastStyles = `
   @keyframes toast-in {
     from {
-      transform: translateX(100%);
+      transform: translateY(100%);
       opacity: 0;
     }
     to {
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
   }
 
   @keyframes toast-out {
     from {
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
     to {
-      transform: translateX(100%);
+      transform: translateY(100%);
       opacity: 0;
     }
   }
